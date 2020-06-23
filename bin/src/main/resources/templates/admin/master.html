@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+            xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta charset="utf-8" />
+    <title>Dashboard - Ace Admin</title>
+
+    <meta name="description" content="overview &amp; stats" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+
+    <!-- bootstrap & fontawesome -->
+    <link rel="stylesheet" th:href="@{/admin/css/bootstrap.min.css}" />
+    <link rel="stylesheet" th:href="@{/admin/font-awesome/4.2.0/css/font-awesome.min.css}" />
+
+    <!-- page specific plugin styles -->
+
+    <!-- text fonts -->
+    <link rel="stylesheet" th:href="@{/admin/fonts/fonts.googleapis.com.css}" />
+
+    <!-- ace styles -->
+    <link rel="stylesheet" th:href="@{/admin/css/ace.min.css}" class="ace-main-stylesheet" id="main-ace-style" />
+
+    <!--[if lte IE 9]>
+    <link rel="stylesheet" th:href="@{/admin/css/ace-part2.min.css}" class="ace-main-stylesheet" />
+    <![endif]-->
+
+    <!--[if lte IE 9]>
+    <link rel="stylesheet" th:href="@{/admin/css/ace-ie.min.css}" />
+    <![endif]-->
+
+    <!-- inline styles related to this page -->
+
+    <!-- ace settings handler -->
+    <script th:src="@{/admin/js/ace-extra.min.js}"></script>
+
+    <!-- HTML5shiv and Respond.js for IE8 to support HTML5 elements and media queries -->
+
+    <!--[if lte IE 8]>
+    <script th:src="@{/admin/js/html5shiv.min.js}"></script>
+    <script th:src="@{/admin/js/respond.min.js}"></script>
+    <![endif]-->
+</head>
+
+<body class="no-skin">
+<!--header-->
+<div th:replace="~{/admin/fragment/_header::header}"></div>
+<!--header-->
+<div class="main-container" id="main-container">
+
+
+<!--    nav-->
+    <div th:replace="~{/admin/fragment/_nav::nav}"></div>
+
+<!--    body-->
+    <div layout:fragment="content"></div>
+
+
+    <!-- footer -->
+    <div th:replace="~{/admin/fragment/_footer::footer}"></div>
+    <!-- footer -->
+    <a href="#" id="btn-scroll-up" class="btn-scroll-up btn btn-sm btn-inverse">
+        <i class="ace-icon fa fa-angle-double-up icon-only bigger-110"></i>
+    </a>
+</div><!-- /.main-container -->
+
+<!--[if !IE]> -->
+<script th:src="@{/admin/js/jquery.2.1.1.min.js}"></script>
+<!--[if IE]>
+<script th:src="@{/admin/js/jquery.1.11.1.min.js}"></script>
+<![endif]-->
+<script th:src="@{/admin/js/bootstrap.min.js}"></script>
+<script th:src="@{/admin/js/excanvas.min.js}"></script>
+<![endif]-->
+<script th:src="@{/admin/js/jquery-ui.custom.min.js}"></script>
+<script th:src="@{/admin/js/jquery.ui.touch-punch.min.js}"></script>
+<script th:src="@{/admin/js/jquery.easypiechart.min.js}"></script>
+<script th:src="@{/admin/js/jquery.sparkline.min.js}"></script>
+<script th:src="@{/admin/js/jquery.flot.min.js}"></script>
+<script th:src="@{/admin/js/jquery.flot.pie.min.js}"></script>
+<script th:src="@{/admin/js/jquery.flot.resize.min.js}"></script>
+<!-- ace scripts -->
+<script th:src="@{/admin/js/ace-elements.min.js}"></script>
+<script th:src="@{/admin/js/ace.min.js}"></script>
+
+<!-- inline scripts related to this page -->
+
+</body>
+</html>

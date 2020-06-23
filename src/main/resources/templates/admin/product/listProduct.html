@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en"xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+        layout:decorate="/admin/master">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<div layout:fragment="content">
+    <div align="center">
+
+        <h1>Products List</h1>
+
+        <table border="1">
+            <tr>
+                <th>Product ID</th>
+                <th>Name</th>
+                <th>Image</th>
+                <th>Quantity</th>
+                <th>Price</th>
+                <th>Status</th>
+                <th>Actions</th>
+            </tr>
+            <tr th:each=" product: ${products}">
+               <td th:text="${product.productid}"></td>
+                <td th:text="${product.name}"></td>
+            <td><img style="width: 70px; height: 70px" th:src="@{'/admin/images/'+${product.image}}"></td>
+                 <td th:text="${product.quantity}"></td>
+                <td th:text="${product.price}"></td>
+                  <td th:text="${product.status}"></td>
+                <td>
+                <!--/*@thymesVar id="productid" type=""*/-->
+                <a th:href= "@{'/edit/'+${product.productid}}" class="btn btn-primary">Edit</a>
+                 <a th:href= "@{'/delete/'+${product.productid}}" class="btn btn-danger">Delete</a>
+                </td>         
+              
+            </tr>
+        </table>
+        <a href="/add" class="btn btn-success">Add Product</a>
+
+
+</div>
+</div>
+</body>
+</html>
